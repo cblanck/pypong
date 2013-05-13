@@ -11,9 +11,13 @@ screen = pygame.display.get_surface()
 background = pygame.Surface(window_size)
 clock = pygame.time.Clock()
 
+borders = pygame.sprite.Group()
+top_border = pygame.Rect(0, 0, window_size[0], 15)
+bottom_border = pygame.Rect(0, window_size[1]-15, window_size[0], 15)
+
 paddles = pygame.sprite.Group()
-player = paddle.Paddle((30, window_size[1]/2), paddles)
-computer = paddle.Paddle((window_size[0]-30, window_size[1]/2), paddles)
+player = paddle.Paddle((30, window_size[1]/2), (paddles, borders))
+computer = paddle.Paddle((window_size[0]-30, window_size[1]/2), (paddles, borders))
 
 balls = pygame.sprite.Group()
 main_ball = ball.Ball((window_size[0]/2,window_size[1]/2), balls)
