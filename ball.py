@@ -27,7 +27,16 @@ class Ball(pygame.sprite.Sprite):
         self.rect.y += self.dy
         
     def collide(self, paddle):
+        old_dx = self.dx
+        old_dy = self.dy
         if paddle:
-            self.dx = -self.dx
+            self.dx = -self.dx + random.choice([-1, 0, 1])
+            if self.dx == 0:
+                self.dx = -old_dx
+            self.dy = self.dy + random.choice([-1, 0, 1])
+            if self.dy == 0:
+                self.dy = old_dy
         else:
-            self.dy = -self.dy
+            self.dy = -self.dy + random.choice([-1, 0, 1])
+            if self.dy == 0:
+                self.dy = -old_dy
