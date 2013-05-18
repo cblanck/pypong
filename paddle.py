@@ -6,10 +6,13 @@ class Paddle(pygame.sprite.Sprite):
     def __init__(self, location, group):
         pygame.sprite.Sprite.__init__(self, group)
 
-        self.image = pygame.Surface([10,30])
+        self.width  = 10
+        self.height = 30
+        
+        self.image = pygame.Surface([self.width, self.height])
         self.image.fill((255,255,255))
 
-        self.rect = self.image.get_rect()
+        self.rect   = self.image.get_rect()
         self.rect.x = location[0]
         self.rect.y = location[1]
         

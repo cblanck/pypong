@@ -81,6 +81,14 @@ while True:
                 computer.speed = 0
             elif event.key == pygame.K_s:
                 computer.speed = 0
+    if computer.rect.x - main_ball.rect.x > 200: 
+        computer.speed = 0
+    elif main_ball.rect.y > (computer.rect.y + computer.width):
+        computer.speed = 3
+    elif main_ball.rect.y < computer.rect.y:
+        computer.speed = -3
+    else:
+        computer.speed = 0
     paddles.update()
     balls.update()
     check_collisions()
