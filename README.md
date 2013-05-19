@@ -6,6 +6,13 @@ You'll like this if
 + You like Pong
 + You like Python
 
+Start-up
+--------
+
+Simply run the following command on any Linux-based OS with Python 2.7 or higher:
+
+    python pong.py
+
 Controls
 --------
 
